@@ -11,6 +11,7 @@ dxvk_is_msvc = cpp.get_argument_syntax() == 'msvc'
 
 compiler_args = [
   '-msse',
+  '-O3',
   '-mf16c',
   '-msse2',
   '-msse3',
