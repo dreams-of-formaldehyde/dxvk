@@ -18,6 +18,7 @@ compiler_args = [
   '-msse4a',
   '-msse4.1',
   '-msse4.2',
+  '-flto=full',
   '-mavx',
   '-mfpmath=sse',
   '-mtune=btver2',
@@ -103,11 +104,15 @@ if platform == 'windows'
     # setup file alignment + enable PDB output for MSVC builds
     # PDBs are useful for Windows consumers of DXVK 
     compiler_args += [
-      '/Z7'
+      '/O1',
+      '/arch:AVX',
+      '/GS-',
+      '/GL'
     ]
     link_args += [
+      '/LTCG
       '/FILEALIGN:4096',
-      '/DEBUG:FULL'
+      '/DEBUG:NONE'
     ]
   endif
 
