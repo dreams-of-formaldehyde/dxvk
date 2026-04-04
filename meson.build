@@ -110,7 +110,7 @@ if platform == 'windows'
       '/GL'
     ]
     link_args += [
-      '/LTCG
+      '/LTCG',
       '/FILEALIGN:4096',
       '/DEBUG:NONE'
     ]
